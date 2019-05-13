@@ -1,0 +1,91 @@
+page{
+  background: white;
+}
+.mech-mid{
+	height: auto;
+	overflow: auto;
+}
+.addStu{
+	padding: 20rpx 0;
+	box-sizing: border-box;
+	height: auto;
+	overflow: auto;
+  /*height: 110rpx;*/
+  /*background-color: gold;*/
+  border-bottom: 1rpx solid #d9d9d9;
+}
+.addStu-line{
+  width: auto;
+  height: 1rpx;
+  background-color: #f0f0f0;
+  display: block;
+}
+.addStu text{
+	font-size: 32rpx;
+  float: left;
+  width: 200rpx;
+  margin-top: 5rpx;
+}
+.addStu-name{
+	/*width: 100%;*/
+	border: none;
+	background: none;
+	height: 60rpx;
+	font-size: 32rpx;
+	/*border: 1px solid #D4D4D4;*/
+	border-radius:10rpx;
+	/*padding: 0 0rpx;*/
+	box-sizing: border-box;
+}
+.addStu-label{
+	float: left;
+	display: inline-block;
+	display: flex;
+	flex-direction: row;
+	width: auto;
+	height: auto;
+	font-size: 34rpx;
+	margin-right: 20rpx;
+}
+.addStu-sex{
+	float: left;
+	margin-right: 10rpx;
+}
+radio-group{
+	display: inline-block;
+	width: 300rpx;
+	float: left;
+	height: auto;
+}
+
+.addStu-date{
+	width: 300rpx;
+
+	box-sizing: border-box;
+	height: 70rpx;
+	font-size: 32rpx;
+	text-align: center;
+
+	line-height: 60rpx;
+	border: 1px solid #9b9b9b;
+	padding: 0 20rpx;
+	border-radius:10rpx;
+	color: #9b9b9b;
+	/*color: #61BEFF;*/
+}
+addStu-name-section {
+  float: right;
+}
+.addStu-section{
+	float: left;
+}
+.addStu-btn{
+	width: auto;
+	height: 80rpx;
+	background: #4798e8;
+	color: white;
+  line-height: 80rpx;
+  font-size: 34rpx;
+  margin-left: 0rpx;
+  margin-right: 0rpx;
+}

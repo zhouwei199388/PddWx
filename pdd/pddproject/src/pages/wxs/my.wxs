@@ -1,0 +1,141 @@
+
+var formatNumber = function (n) {
+  n = n.toString()
+  return n[1] ? n : '0' + n
+}
+
+var regYear = getRegExp("(y+)", "i");
+//日期格式化：参数1：时间戳；参数2：格式化方法：yyyy-HH-dd，默认：yyyy-MM-dd hh:mm:ss
+var dateFormat = function (timestamp, format) {
+  if (!format) {
+    format = "yyyy-MM-dd hh:mm:ss";
+  }
+  timestamp = parseInt(timestamp)*1000;
+  var realDate = getDate(timestamp);
+  function timeFormat(num) {
+    return num < 10 ? '0' + num : num;
+  }
+  var date = [
+    ["M+", timeFormat(realDate.getMonth() + 1)],
+    ["d+", timeFormat(realDate.getDate())],
+    ["h+", timeFormat(realDate.getHours())],
+    ["m+", timeFormat(realDate.getMinutes())],
+    ["s+", timeFormat(realDate.getSeconds())],
+    ["q+", Math.floor((realDate.getMonth() + 3) / 3)],
+    ["S+", realDate.getMilliseconds()],
+  ];
+  var reg1 = regYear.exec(format);
+  // console.log(reg1[0]);
+  if (reg1) {
+
+    format = format.replace(reg1[1], (realDate.getFullYear() + '').substring(4 - reg1[1].length));
+  }
+  for (var i = 0; i < date.length; i++) {
+    var k = date[i][0];
+    var v = date[i][1];
+
+    var reg2 = getRegExp("(" + k + ")").exec(format);
+    if (reg2) {
+      format = format.replace(reg2[1], reg2[1].length == 1
+        ? v : ("00" + v).substring(("" + v).length));
+    }
+  }
+  return format;
+}
+
+//金额格式化，要求传入的单位为分,将返回 12.00格式的金额
+var moneyFormat = function(money) {
+   var result = money / 100;
+   return result.toFixed(2);
+}
+
+//分钟转小时 保留1位小时
+var hourFormat = function(minutes){
+  var result = minutes / 60;
+  return result.toFixed(1);
+}
+
+//根据类型获取学生跟进记录标签背景颜色
+var getStudentTraceColor = function(type){
+  var color = "";
+  switch(type){
+      case 1:
+        color = 'bg-warning';
+        break;
+      case 2:
+        color = 'bg-megna';
+        break;
+      case 3:
+        color = "bg-red";
+        break;
+      case 4:
+        color = "bg-success";
+        break;
+      case 5:
+        color = "bg-info";
+        break;
+      case 6:
+        color = "bg-purple"
+        break;
+  }
+  return color;
+}
+
+
+//根据类型显示通知的类型
+var getNoteString = function(type){
+  var text = "";
+  switch(type){
+      case 1:
+        text = "活动通知";
+        break;
+      case 2:
+        text = "作业通知";
+        break;
+      case 3:
+        text = "放假通知";
+        break;
+      case 4:
+        text = "其它通知";
+        break;
+
+  }
+  return text;
+}
+
+//根据类型显示通知的不同颜色
+var getNoteColor = function(type){
+  var color = "";
+  switch(type){
+      case 1:
+        color = "noti-icon-red";
+        break;
+      case 2:
+        color = "noti-icon-yellow";
+        break;
+      case 3:
+        color = "noti-icon-blue";
+        break;
+      case 4:
+        color = "noti-icon-green";
+        break;
+  }
+  return color;
+}
+
+//分钟转小时 保留1位小时
+var parseDuration = function(duration){
+  var result = parseInt(duration / 1000);
+  return result;
+}
+
+
+
+module.exports = {
+  dateFormat: dateFormat
+  moneyFormat: moneyFormat
+  hourFormat:hourFormat
+  getNoteString:getNoteString
+  getNoteColor:getNoteColor
+  parseDuration:parseDuration
+};

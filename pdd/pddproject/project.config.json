@@ -1,0 +1,15 @@
+{
+	"description": "pdd",
+	"setting": {
+		"urlCheck": true,
+		"es6": false,
+		"postcss": false,
+		"minified": false,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"appid": "wxa58577eb86193e88",
+	"projectname": "pddproject",
+	"miniprogramRoot": "dist/",
+	"condition": {}
+}
