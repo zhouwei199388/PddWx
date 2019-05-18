@@ -58,7 +58,7 @@
     }
 
     getOrders(){
-      const startTime = new Date(this.dateValue).getTime()/1000;
+      const startTime = (new Date(this.dateValue).getTime()-this.getScDay())/1000;
       const endTime = startTime+3600*24;
 
       const requestHandle = {
@@ -73,6 +73,9 @@
         },error=>{
           console.log(error)
         })
+    }
+    getScDay(){
+      return 3600*24*5*1000
     }
     onLoad() {
       this.dateValue = Utils.dateFormat(new Date().getTime(), "y-M-d");

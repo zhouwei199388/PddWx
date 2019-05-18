@@ -11,5 +11,7 @@
 	"appid": "wxa58577eb86193e88",
 	"projectname": "pddproject",
 	"miniprogramRoot": "dist/",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
 	"condition": {}
 }

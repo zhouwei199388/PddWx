@@ -5,6 +5,42 @@ page{
   background: #F2F2F2;
   font-size: 16px;
 }
+
+.mech-wrap{
+  width: 100%;
+  /*height: 100%;*/
+  display: block;
+  /*overflow: auto;*/
+  height: auto;
+}
+
+.mech-top {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 128rpx;
+  background: #f44444;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  font-size: 34rpx;
+  text-align: center;
+  z-index: 5;
+}
+/*固定头部*/
+.setfixed{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+/*中间的部分*/
+.mech-mid{
+  /*padding-top: 128rpx;*/
+  box-sizing: border-box;
+  /*background: blue;*/
+}
+
 .flex-direction{
   display: flex;
   flex-direction: column;

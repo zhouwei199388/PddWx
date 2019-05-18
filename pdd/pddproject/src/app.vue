@@ -17,10 +17,10 @@ import 'wepy-async-function'
 export default class extends wepy.app {
   config = {
     pages: [
+      'pages/index',
       'pages/scList',
       'pages/order',
       'pages/orderDetails',
-      'pages/index',
     ],
     window: {
       backgroundTextStyle: 'light',

@@ -7,11 +7,19 @@
     flex-direction: column;
     border-bottom: 1px solid #333333;
   }
+
+  .btn-style{
+    background: #9b9b9b;
+    border: 1rpx solid #000000;
+    flex:1;
+    text-align: center;
+    padding: 20rpx 0rpx;
+  }
 </style>
 <template>
-  <view class="flex-row">
-    <view>订单列表</view>
-    <view>收菜列表</view>
+  <view class="flex-row" >
+    <view class="btn-style" @tap="toOrder">订单列表</view>
+    <view class="btn-style" @tap="toScList">收菜列表</view>
   </view>
 </template>
 
@@ -19,6 +27,7 @@
   import wepy from 'wepy';
   import httpUtils from '../common/js/httputil';
   import Toast from 'wepy-com-toast';
+  import utils from '../common/js/utils'
 
   export default class Index extends wepy.page {
     config = {
@@ -36,7 +45,14 @@
       wlPriceTotal: 0,//所有物流费
       goodsPriceTotal: 0//货款总支出
     };
-    methods = {};
+    methods = {
+      toOrder(){
+       utils.navigateTo('order');
+      },
+      toScList(){
+        utils.navigateTo('scList');
+      }
+    };
 
     setPrice(orders) {
 
