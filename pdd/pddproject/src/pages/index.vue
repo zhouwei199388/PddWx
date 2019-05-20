@@ -9,18 +9,33 @@
   }
 
   .btn-style{
-    background: #9b9b9b;
-    border: 1rpx solid #000000;
+    background: white;
+    border-top: 1rpx solid #999999;
+    border-bottom: 1rpx solid #999999;
     flex:1;
     text-align: center;
     padding: 20rpx 0rpx;
   }
 </style>
 <template>
-  <view class="flex-row" >
-    <view class="btn-style" @tap="toOrder">订单列表</view>
-    <view class="btn-style" @tap="toScList">收菜列表</view>
+  <view class="flex-column-center bg-white  p-20 m-r-20 m-l-20 m-t-10">
+    <text class="font-32">收入</text>
+    <text class="font-28 text-red">{{srPrice===0?0:srPrice/100}}</text>
   </view>
+  <view class="bg-white flex-row border-top p-10 m-r-20 m-l-20">
+    <view class="flex-column-center border-right " style="flex:1">
+      <text class="font-32">佣金</text>
+      <text class="font-28 text-green">{{sdPrice===0?0:sdPrice/100}}</text>
+    </view>
+    <view class="flex-column-center" style="flex:1">
+      <text class="font-32">技术服务费</text>
+      <text class="font-28 text-green">{{poundagePrice===0?0:poundagePrice/100}}</text>
+    </view>
+  </view>
+
+
+  <button @tap="toOrder" class="bg-blue m-20 text-white" style="margin-top: 100rpx">订单列表</button>
+  <button @tap="toScList" class="bg-blue m-20 text-white" >收菜列表</button>
 </template>
 
 <script>
